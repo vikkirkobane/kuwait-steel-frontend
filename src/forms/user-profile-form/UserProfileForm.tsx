@@ -1,5 +1,4 @@
 import { z } from "zod";
-import PropTypes from 'prop-types';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
