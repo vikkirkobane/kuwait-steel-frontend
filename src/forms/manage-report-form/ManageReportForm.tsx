@@ -69,11 +69,11 @@ const ManageReportForm = ({ onSave, isLoading, report }: Props) => {
     }
 
     // price lowest domination of 100 = 100pence == 1GBP
-    /*
+    
     const gateFormatted = parseInt(
-      (report.gate).toFixed(2)
+      report.gate.toFixed(2)
     );
-*/
+
     const damageItemsFormatted = report.damageItems.map((item) => ({
       ...item,
       price: parseInt((item.price / 100).toFixed(2)),
@@ -81,7 +81,7 @@ const ManageReportForm = ({ onSave, isLoading, report }: Props) => {
 
     const updatedReport = {
       ...report,
-    //  gate: gateFormatted,
+      gate: gateFormatted,
       damageItems: damageItemsFormatted,
     };
 
