@@ -43,7 +43,7 @@ const DetailsSection = () => {
               <FormLabel>Description: </FormLabel>
               <FormControl>
                 <Textarea {...field} className="bg-white"
-                  rows="5"
+                  rows={5}
                 />
               </FormControl>
               <FormMessage />
@@ -58,7 +58,7 @@ const DetailsSection = () => {
               <FormLabel>Recommendations: </FormLabel>
               <FormControl>
                 <Textarea {...field} className="bg-white"
-                  rows="5"
+                  rows={5}
                 />
               </FormControl>
               <FormMessage />
