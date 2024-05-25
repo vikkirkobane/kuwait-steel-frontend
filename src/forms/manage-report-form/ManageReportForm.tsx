@@ -46,7 +46,7 @@ const formSchema = z.object({
     path: ["imageFile"],
   });
 
-type reportFormData = z.infer<typeof formSchema>;
+type ReportFormData = z.infer<typeof formSchema>;
 
 type Props = {
   report?: Report;
@@ -55,7 +55,7 @@ type Props = {
 }
 
 const ManageReportForm = ({ onSave, isLoading, report }: Props) => {
-  const form = useForm<reportFormData>({
+  const form = useForm<ReportFormData>({
       resolver: zodResolver(formSchema),
       defaultValues: {
         incident: [],
@@ -69,10 +69,11 @@ const ManageReportForm = ({ onSave, isLoading, report }: Props) => {
     }
 
     // price lowest domination of 100 = 100pence == 1GBP
+    /*
     const gateFormatted = parseInt(
       (report.gate).toFixed(2)
     );
-
+*/
     const damageItemsFormatted = report.damageItems.map((item) => ({
       ...item,
       price: parseInt((item.price / 100).toFixed(2)),
@@ -80,14 +81,14 @@ const ManageReportForm = ({ onSave, isLoading, report }: Props) => {
 
     const updatedReport = {
       ...report,
-      gate: gateFormatted,
+    //  gate: gateFormatted,
       damageItems: damageItemsFormatted,
     };
 
     form.reset(updatedReport);
   }, [form, report]);
   
-  const onSubmit = (formDataJson: reportFormData) => {
+  const onSubmit = (formDataJson: ReportFormData) => {
     // convert formDataJson to a new FormData object
     const formData = new FormData();
 
