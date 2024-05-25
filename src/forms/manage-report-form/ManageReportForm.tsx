@@ -10,6 +10,7 @@ import IncidentSection from "./IncidentSection";
 import DamageSection from "./DamageSection";
 import ImageSection from "./ImageSection";
 import { useEffect } from "react";
+import { Report } from "@/types";
 
 
 const formSchema = z.object({

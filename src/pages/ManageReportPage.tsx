@@ -16,6 +16,7 @@ const ManageReportPage = () => {
     
   return <ManageReportForm 
   report={report} 
+  //change here to only create a report
   onSave={isEditing ? updateReport : createReport} 
   isLoading={isCreateLoading || isUpdateLoading} />
 }
