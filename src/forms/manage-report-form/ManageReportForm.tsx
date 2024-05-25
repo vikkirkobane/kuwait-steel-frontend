@@ -98,11 +98,11 @@ const ManageReportForm = ({ onSave, isLoading, report }: Props) => {
 
     formData.append(
       "gate",
-      formDataJson.gate.toString()
+      formDataJson.gate //.toString()
     );
     formData.append(
       "plateNumber",
-      formDataJson.plateNumber.toString()
+      formDataJson.plateNumber //.toString()
     );
     formDataJson.incident.forEach((incident, index) => {
       formData.append(`incident[${index}]`, incident);
