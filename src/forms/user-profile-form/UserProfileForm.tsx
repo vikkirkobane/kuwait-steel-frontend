@@ -101,7 +101,7 @@ const UserProfileForm = ({ onSave, isLoading, currentUser }: Props) => {
           {isLoading ? (
             <LoadingButton />
             ): (
-                <Button type="submit" className="bg-orange-500">
+                <Button type="submit" className="bg-blue-500">
                   Submit
                 </Button>
                 )}
