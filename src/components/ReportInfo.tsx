@@ -10,7 +10,7 @@ import { Dot } from "lucide-react";
 import { Separator } from "./ui/separator";
 
 type Props = {
-  restaurant: Report;
+  report: Report;
 };
 
 const ReportInfo = ({ report }: Props) => {
