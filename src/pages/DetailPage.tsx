@@ -103,7 +103,7 @@ const DetailPage = () => {
         <div>
           <Card>
             <OrderSummary
-              report={report}
+              //report={report}
               cartItems={cartItems}
               removeFromCart={removeFromCart}
             />
