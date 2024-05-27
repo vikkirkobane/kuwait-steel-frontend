@@ -17,7 +17,7 @@ const HomePage = () => {
               </h1>
               <span className="text-xl">Submit your report with just a click.</span>
               <SearchBar
-                  placeHolder="Search by Report or Incident"
+                  placeHolder="Search Report or Incident"
                   onSubmit={handleSearchSubmit}
                 />
             </div>
