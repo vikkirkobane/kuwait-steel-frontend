@@ -2,14 +2,14 @@ import ManageReportForm from "@/forms/manage-report-form/ManageReportForm";
 import {
 //  useGetMyReport,
   useCreateMyReport,
-  useUpdateMyReport,
+//  useUpdateMyReport,
 } from "@/api/MyReportApi";
 
 const ManageReportPage = () => {
   const {createReport, isLoading: isCreateLoading } =
     useCreateMyReport();
 //  const { report } = useGetMyReport(); 
-  const { report } = useCreateMyReport(); 
+//  const { report } = useCreateMyReport(); 
   // const { updateReport,  isLoading: isUpdateLoading } =
 //     useUpdateMyReport();
 //   
