@@ -10,17 +10,17 @@ const ManageReportPage = () => {
     useCreateMyReport();
 //  const { report } = useGetMyReport(); 
   const { report } = useCreateMyReport(); 
-  const {/* updateReport, */ isLoading: isUpdateLoading } =
-    useUpdateMyReport();
-  
+  // const { updateReport,  isLoading: isUpdateLoading } =
+//     useUpdateMyReport();
+//   
 //  const isEditing = !!report;
     
   return <ManageReportForm 
-  report={report} 
+//  report={report} 
   //change here to only create a report
 //  onSave={isEditing ? updateReport : createReport} 
   onSave={createReport} 
-  isLoading={isCreateLoading || isUpdateLoading} />
+  isLoading={isCreateLoading /* || isUpdateLoading */ } />
 }
 
 export default ManageReportPage;
