@@ -16,13 +16,13 @@ const UpdateReportPage = () => {
 //  const { report } = useCreateMyReport(); 
 
   const { reportId } = useParams();
-  const { report, isLoading } = useGetReport(reportId);
+  const { report,/* isLoading */ } = useGetReport(reportId);
  
 
   const { updateReport, isLoading: isUpdateLoading } =
     useUpdateMyReport(reportId);
   
-  const isEditing = !!report;
+//  const isEditing = !!report;
     
   return <ManageReportForm 
   report={report} 

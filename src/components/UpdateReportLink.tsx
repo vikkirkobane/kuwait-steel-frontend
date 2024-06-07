@@ -8,7 +8,7 @@ type Props = {
 };
 
 const UpdateReportLink = ({ report }: Props) => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
     return (
         <span className="flex space-x-2 items-center">
           {isAuthenticated ? (
