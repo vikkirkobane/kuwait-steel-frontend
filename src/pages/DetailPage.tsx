@@ -7,6 +7,9 @@ import { DamageItem as DamageItemType } from "../types";
 import ReportInfo from "@/components/ReportInfo";
 import DamageItem from "@/components/DamageItem";
 import OrderSummary from "@/components/OrderSummary";
+import UpdateReportLink from "@/components/UpdateReportLink";
+
+//import { useSearchReports } from "@/api/ReportApi";
 
 export type CartItem = {
   _id: string;
@@ -109,6 +112,8 @@ const DetailPage = () => {
             />
             
           </Card>
+          <br/>
+          <UpdateReportLink report={report} />
         </div>
       </div>
     </div>

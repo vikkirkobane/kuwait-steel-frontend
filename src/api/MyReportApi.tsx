@@ -70,23 +70,33 @@ export const useCreateMyReport = () => {
 
   return { createReport, isLoading };
 };
-
-export const useUpdateMyReport = () => {
+// testing with reportId?: string, you can remove
+export const useUpdateMyReport = (reportId?: string) => {
   const { getAccessTokenSilently } = useAuth0();
 
   const updateReportRequest = async (
     reportFormData: FormData
   ): Promise<Report> => {
     const accessToken = await getAccessTokenSilently();
-
-    const response = await fetch(`${API_BASE_URL}/api/my/report`, {
+    
+    const response = await fetch(
+      `${API_BASE_URL}/api/my/report/${reportId}`, {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: reportFormData,
     });
+  
 
+    // const response = await fetch(`${API_BASE_URL}/api/my/report`, {
+//       method: "PUT",
+//       headers: {
+//         Authorization: `Bearer ${accessToken}`,
+//       },
+//       body: reportFormData,
+//     });
+// 
     if (!response) {
       throw new Error("Failed to update report");
     }

@@ -8,7 +8,8 @@ import {
 const ManageReportPage = () => {
   const {createReport, isLoading: isCreateLoading } =
     useCreateMyReport();
-  const { report } = useGetMyReport(); 
+//  const { report } = useGetMyReport(); 
+  const { report } = useCreateMyReport(); 
   const { updateReport, isLoading: isUpdateLoading } =
     useUpdateMyReport();
   
@@ -17,7 +18,8 @@ const ManageReportPage = () => {
   return <ManageReportForm 
   report={report} 
   //change here to only create a report
-  onSave={isEditing ? updateReport : createReport} 
+//  onSave={isEditing ? updateReport : createReport} 
+  onSave={createReport} 
   isLoading={isCreateLoading || isUpdateLoading} />
 }
 

@@ -77,7 +77,7 @@ const SearchPage = () => {
   }
   
   if (!results?.data || !reportName) {
-    return <span>No results found</span>;
+    return <span>No results found yet</span>;
   }
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5">
