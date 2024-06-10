@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useCreateMyUser } from "@/api/MyUserApi";
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { LoaderCircle } from 'lucide-react';
 
 export default function AuthCallbackPage() {
   const navigate = useNavigate();
@@ -16,5 +17,9 @@ export default function AuthCallbackPage() {
     }
     navigate("/");
   }, [createUser, navigate, user]);
-  return <div>Loading...</div>;
+  return ( 
+    <div className="flex justify-center items-center min-h-screen">
+      <LoaderCircle />
+    </div>
+  );
 };

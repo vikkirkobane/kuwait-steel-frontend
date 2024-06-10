@@ -6,6 +6,7 @@ import PaginationSelector from "@/components/PaginationSelector";
 import IncidentFilter from "@/components/IncidentFilter";
 import SortOptionDropdown from "@/components/SortOptionDropdown";
 import SearchResultCard from "@/components/SearchResultCard";
+import { LoaderCircle } from 'lucide-react';
 import { useState } from "react";
 
 export type SearchState = {
@@ -73,11 +74,17 @@ const SearchPage = () => {
 
   
   if (isLoading) {
-    <span>Loading ...</span>;
-  }
+    <span className="flex justify-center items-center min-h-screen">
+      <LoaderCircle />
+    </span>
+  };
   
   if (!results?.data || !reportName) {
-    return <span>No results found yet</span>;
+    return (
+      <span className="flex justify-center items-center min-h-screen">
+        <LoaderCircle />
+      </span>
+    );
   }
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-5">

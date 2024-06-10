@@ -1,13 +1,16 @@
 import { useGetReport } from "@/api/ReportApi";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
+import { LoaderCircle } from 'lucide-react';
 import { DamageItem as DamageItemType } from "../types";
 import ReportInfo from "@/components/ReportInfo";
 import DamageItem from "@/components/DamageItem";
 import OrderSummary from "@/components/OrderSummary";
 import UpdateReportLink from "@/components/UpdateReportLink";
+
+import { useGetMyUser } from "@/api/MyUserApi";
 
 //import { useSearchReports } from "@/api/ReportApi";
 
@@ -21,6 +24,8 @@ export type CartItem = {
 const DetailPage = () => {
   const { reportId } = useParams();
   const { report, isLoading } = useGetReport(reportId);
+  
+  const { currentUser } = useGetMyUser(reportId);
  
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const storedCartItems = sessionStorage.getItem(`cartItems-${reportId}`);
@@ -80,7 +85,11 @@ const DetailPage = () => {
     
   
   if (isLoading || !report) {
-    return "Loading...";
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <LoaderCircle />
+      </div>
+    )
   };
   
   return (
@@ -113,12 +122,15 @@ const DetailPage = () => {
             
           </Card>
           <br/>
-          <UpdateReportLink report={report} />
+          <UpdateReportLink
+            report={report}
+            currentUser={currentUser}
+          />
         </div>
       </div>
     </div>
   )
-}
+};
 
 
 export default DetailPage;
