@@ -1,6 +1,6 @@
 import { useGetReport } from "@/api/ReportApi";
 import { useParams } from "react-router-dom";
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
 import { LoaderCircle } from 'lucide-react';
@@ -25,7 +25,7 @@ const DetailPage = () => {
   const { reportId } = useParams();
   const { report, isLoading } = useGetReport(reportId);
   
-  const { currentUser } = useGetMyUser(reportId);
+  const { currentUser } = useGetMyUser();
  
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const storedCartItems = sessionStorage.getItem(`cartItems-${reportId}`);
