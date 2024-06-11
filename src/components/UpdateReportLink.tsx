@@ -1,9 +1,9 @@
 //import { Button } from "./ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import { Report, User } from "@/types";
-import { useState, useEffect } from 'react';
-import { LoaderCircle } from 'lucide-react';
+import { Report } from "@/types";
+//import { useState, useEffect } from 'react';
+//import { LoaderCircle } from 'lucide-react';
 
 import { useGetMyUser } from "@/api/MyUserApi";
 
