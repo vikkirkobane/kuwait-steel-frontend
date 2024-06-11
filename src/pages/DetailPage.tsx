@@ -10,7 +10,7 @@ import DamageItem from "@/components/DamageItem";
 import OrderSummary from "@/components/OrderSummary";
 import UpdateReportLink from "@/components/UpdateReportLink";
 
-import { useGetMyUser } from "@/api/MyUserApi";
+//import { useGetMyUser } from "@/api/MyUserApi";
 
 //import { useSearchReports } from "@/api/ReportApi";
 
@@ -25,10 +25,10 @@ const DetailPage = () => {
   const { reportId } = useParams();
   const { report, isLoading } = useGetReport(reportId);
   
-  const { currentUser  } = useGetMyUser();
-
-  // if (!currentUser) {
-//     return isUserLoading;
+  // const { currentUser } = useGetMyUser();
+// //alert(currentUser)
+//   if (!currentUser) {
+//     return isLoading;
 //   }
  
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
@@ -128,7 +128,7 @@ const DetailPage = () => {
           <br/>
           <UpdateReportLink
             report={report}
-            currentUser={currentUser}
+//            currentUser={currentUser}
           />
         </div>
       </div>

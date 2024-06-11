@@ -5,29 +5,37 @@ import { Report, User } from "@/types";
 import { useState, useEffect } from 'react';
 import { LoaderCircle } from 'lucide-react';
 
+import { useGetMyUser } from "@/api/MyUserApi";
+
 type Props = {
   report: Report,
-  currentUser: User,
+//  currentUser: User,
   
 };
 
-const UpdateReportLink = ({ report, currentUser }: Props) => {
+const UpdateReportLink = ({ report /*, currentUser */ }: Props) => {
   const { isAuthenticated } = useAuth0();
   const reportUser = JSON.stringify(report.user);;
   
-  const [storedData, setStoredData] = useState(currentUser || {} || null);
-
-  useEffect(() => {
-    if (currentUser !== undefined && currentUser !== null) {
-      setStoredData(currentUser);
-    }
-  }, [currentUser]);
-  
-  if (!storedData) {
-    return <LoaderCircle />;
+  const { currentUser, isLoading } = useGetMyUser();
+//alert(currentUser)
+  if (!currentUser) {
+    return isLoading;
   }
   
-  const currentUserId = JSON.stringify(storedData._id);
+  // const [storedData, setStoredData] = useState(currentUser || {} || null);
+// 
+//   useEffect(() => {
+//     if (currentUser !== undefined && currentUser !== null) {
+//       setStoredData(currentUser);
+//     }
+//   }, [currentUser]);
+//   
+//   if (!storedData) {
+//     return <LoaderCircle />;
+//   }
+//   
+  const currentUserId = JSON.stringify(currentUser._id);
 
     return (
         <span className="flex space-x-2 items-center">
