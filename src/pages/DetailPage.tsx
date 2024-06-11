@@ -1,6 +1,6 @@
 import { useGetReport } from "@/api/ReportApi";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
 import { LoaderCircle } from 'lucide-react';
@@ -25,7 +25,7 @@ const DetailPage = () => {
   const { reportId } = useParams();
   const { report, isLoading } = useGetReport(reportId);
   
-  const { currentUser, isLoading: isUserLoading } = useGetMyUser(null);
+  const { currentUser, isLoading: isUserLoading } = useGetMyUser();
  // const [storedUser, setstoredUser] = useState(currentUser || null);
 // 
 //   useEffect(() => {
