@@ -25,18 +25,11 @@ const DetailPage = () => {
   const { reportId } = useParams();
   const { report, isLoading } = useGetReport(reportId);
   
-  const { currentUser, isLoading: isUserLoading } = useGetMyUser();
- // const [storedUser, setstoredUser] = useState(currentUser || null);
-// 
-//   useEffect(() => {
-//     if (currentUser !== undefined && currentUser !== null) {
-//       setstoredUser(currentUser);
-//     }
-//   }, [currentUser]);
-//   
-  if (!currentUser) {
-    return isUserLoading;
-  }
+  const { currentUser  } = useGetMyUser();
+
+  // if (!currentUser) {
+//     return isUserLoading;
+//   }
  
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     const storedCartItems = sessionStorage.getItem(`cartItems-${reportId}`);

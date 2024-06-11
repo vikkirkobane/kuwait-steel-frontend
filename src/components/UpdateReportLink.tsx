@@ -2,7 +2,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 import { Report, User } from "@/types";
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { LoaderCircle } from 'lucide-react';
 
 type Props = {
@@ -40,4 +40,4 @@ const UpdateReportLink = ({ report, currentUser }: Props) => {
     );
 };
 
-export default React.memo(UpdateReportLink);
+export default UpdateReportLink;
