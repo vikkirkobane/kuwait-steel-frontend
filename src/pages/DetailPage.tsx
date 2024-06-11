@@ -25,16 +25,16 @@ const DetailPage = () => {
   const { reportId } = useParams();
   const { report, isLoading } = useGetReport(reportId);
   
-  const { currentUser, isLoading: isUserLoading } = useGetMyUser();
- const [storedUser, setstoredUser] = useState(currentUser || {} || null);
-
-  useEffect(() => {
-    if (currentUser !== undefined && currentUser !== null) {
-      setstoredUser(currentUser);
-    }
-  }, [currentUser]);
-  
-  if (!storedUser) {
+  const { currentUser, isLoading: isUserLoading } = useGetMyUser(null);
+ // const [storedUser, setstoredUser] = useState(currentUser || null);
+// 
+//   useEffect(() => {
+//     if (currentUser !== undefined && currentUser !== null) {
+//       setstoredUser(currentUser);
+//     }
+//   }, [currentUser]);
+//   
+  if (!currentUser) {
     return isUserLoading;
   }
  
@@ -135,7 +135,7 @@ const DetailPage = () => {
           <br/>
           <UpdateReportLink
             report={report}
-            currentUser={storedUser}
+            currentUser={currentUser}
           />
         </div>
       </div>
