@@ -2,7 +2,7 @@ import { useGetReport } from "@/api/ReportApi";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Card } from "@/components/ui/card";
+import { Card, CardFooter } from "@/components/ui/card";
 import { LoaderCircle } from 'lucide-react';
 import { DamageItem as DamageItemType } from "../types";
 import ReportInfo from "@/components/ReportInfo";
@@ -94,7 +94,7 @@ const DetailPage = () => {
         <LoaderCircle />
       </div>
     )
-  };
+  }
   
   return (
     <div className="flex flex-col gap-10">
@@ -125,11 +125,14 @@ const DetailPage = () => {
             />
             
           </Card>
-          <br/>
-          <UpdateReportLink
-            report={report}
+          
+          <CardFooter>
+            <UpdateReportLink
+              report={report}
 //            currentUser={currentUser}
-          />
+            />
+          </CardFooter>
+          
         </div>
       </div>
     </div>

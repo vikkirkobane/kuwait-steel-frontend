@@ -6,6 +6,7 @@ import { Report } from "@/types";
 //import { LoaderCircle } from 'lucide-react';
 
 import { useGetMyUser } from "@/api/MyUserApi";
+import { Button } from "./ui/button";
 
 type Props = {
   report: Report,
@@ -15,7 +16,7 @@ type Props = {
 
 const UpdateReportLink = ({ report /*, currentUser */ }: Props) => {
   const { isAuthenticated } = useAuth0();
-  const reportUser = JSON.stringify(report.user);;
+  const reportUser = JSON.stringify(report.user);
   
   const { currentUser, isLoading } = useGetMyUser();
 //alert(currentUser)
@@ -37,15 +38,26 @@ const UpdateReportLink = ({ report /*, currentUser */ }: Props) => {
 //   
   const currentUserId = JSON.stringify(currentUser._id);
 
-    return (
+        return (
         <span className="flex space-x-2 items-center">
           {isAuthenticated   && reportUser === currentUserId ? (
               <Link
       to={`/update-report/${report._id}`}
-      className="ml-1 text-sm font-semibold underline cursor-pointer text-blue-500">Edit Report</Link>
+      className="ml-1 text-sm font-semibold underline cursor-pointer text-blue-500">
+          <Button className="bg-blue-500 flex-1">Edit Report</Button></Link>
       ) : '' }
         </span>
     );
+
+    // return (
+    //     <span className="flex space-x-2 items-center">
+    //       {isAuthenticated   && reportUser === currentUserId ? (
+    //           <Link
+    //   to={`/update-report/${report._id}`}
+    //   className="ml-1 text-sm font-semibold underline cursor-pointer text-blue-500">Edit Report</Link>
+    //   ) : '' }
+    //     </span>
+    // );
 };
 
 export default UpdateReportLink;
