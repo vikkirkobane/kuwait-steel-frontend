@@ -125,7 +125,7 @@ const DetailPage = () => {
             />
             
           </Card>
-          
+          <br/>
           <CardFooter>
             <UpdateReportLink
               report={report}
