@@ -91,7 +91,7 @@ const DetailPage = () => {
   if (isLoading || !report) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <LoaderCircle />
+        <LoaderCircle className="animate-spin" />
       </div>
     )
   }

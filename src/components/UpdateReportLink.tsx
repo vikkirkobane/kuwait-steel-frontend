@@ -32,7 +32,7 @@ const UpdateReportLink = ({ report /*, currentUser */ }: Props) => {
 
   if(!isAuthenticated) {
     return ( 
-    <Button onClick={onLogin} className="bg-blue-500 flex-1">Login to Edit Report</Button>
+    <Button onClick={onLogin} className="bg-blue-500 flex-1">Login to Create or Edit Report</Button>
     );
   }
   if(isAuthLoading){

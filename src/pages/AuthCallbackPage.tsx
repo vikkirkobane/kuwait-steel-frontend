@@ -19,7 +19,7 @@ export default function AuthCallbackPage() {
   }, [createUser, navigate, user]);
   return ( 
     <div className="flex justify-center items-center min-h-screen">
-      <LoaderCircle />
+      <LoaderCircle className="animate-spin" />
     </div>
   );
 };

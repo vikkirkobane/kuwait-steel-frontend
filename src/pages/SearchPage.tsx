@@ -75,14 +75,14 @@ const SearchPage = () => {
   
   if (isLoading) {
     <span className="flex justify-center items-center min-h-screen">
-      <LoaderCircle />
+      <LoaderCircle className="animate-spin" />
     </span>
   };
   
   if (!results?.data || !reportName) {
     return (
       <span className="flex justify-center items-center min-h-screen">
-        <LoaderCircle />
+        <LoaderCircle className="animate-spin" />
       </span>
     );
   }

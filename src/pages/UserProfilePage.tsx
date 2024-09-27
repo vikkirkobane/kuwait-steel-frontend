@@ -9,7 +9,7 @@ const UserProfilePage = () => {
   if (isGetLoading) {
     return (
       <span className="flex justify-center items-center min-h-screen">
-        <LoaderCircle />
+        <LoaderCircle className="animate-spin" />
       </span>
       );
   }
